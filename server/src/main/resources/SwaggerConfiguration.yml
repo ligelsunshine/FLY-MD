@@ -1,0 +1,14 @@
+# swagger2配置信息
+swagger:
+  enable: true
+  pathMapping: 4
+  apiInfo:
+    title: Spring-Security Item
+    description: Spring-Security Item相关接口
+    version: 1.0
+    contact:
+      name: LIGEL
+      url: www.baidu.com
+      email: "ligelyqz@163.com"
+    license: 2
+    licenseUrl: 3
