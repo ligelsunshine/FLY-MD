@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(value ={"com.fly.common.**","com.fly.server.**"})
-@MapperScan({"com.fly.server.mapper"})
+@MapperScan({"com.fly.server.**.mapper"})
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

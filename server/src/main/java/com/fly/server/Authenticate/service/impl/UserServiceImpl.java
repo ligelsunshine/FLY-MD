@@ -1,4 +1,4 @@
-package com.fly.server.service.impl;
+package com.fly.server.Authenticate.service.impl;
 
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
 import com.fly.common.model.entity.UserEntity;
@@ -6,8 +6,8 @@ import com.fly.common.model.param.LoginParam;
 import com.fly.common.model.param.UserParam;
 import com.fly.common.model.vo.UserVo;
 import com.fly.common.security.JwtManager;
-import com.fly.server.mapper.UserMapper;
-import com.fly.server.service.UserService;
+import com.fly.server.Authenticate.mapper.UserMapper;
+import com.fly.server.Authenticate.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

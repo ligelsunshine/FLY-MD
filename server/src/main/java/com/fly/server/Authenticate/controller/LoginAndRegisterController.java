@@ -1,4 +1,4 @@
-package com.fly.server.controller;
+package com.fly.server.Authenticate.controller;
 import com.fly.common.model.entity.UserEntity;
 import com.fly.common.model.param.LoginParam;
 import com.fly.common.model.param.RegisterParam;
@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import com.fly.server.service.UserService;
+import com.fly.server.Authenticate.service.UserService;
 
 import javax.annotation.Resource;
 

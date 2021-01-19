@@ -1,4 +1,4 @@
-package com.fly.server.service;
+package com.fly.server.Authenticate.service;
 
 
 import com.fly.common.model.entity.UserEntity;

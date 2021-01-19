@@ -1,4 +1,4 @@
-package com.fly.server.controller;
+package com.fly.server.Authenticate.controller;
 
 
 import com.fly.common.annotation.NotResponseBody;

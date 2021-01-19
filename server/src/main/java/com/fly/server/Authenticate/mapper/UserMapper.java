@@ -1,5 +1,5 @@
 
-package com.fly.server.mapper;
+package com.fly.server.Authenticate.mapper;
 
 import com.fly.common.model.entity.UserEntity;
 import org.apache.ibatis.annotations.Param;
