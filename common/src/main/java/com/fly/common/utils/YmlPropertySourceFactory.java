@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class YamlPropertySourceFactory implements PropertySourceFactory {
+public class YmlPropertySourceFactory implements PropertySourceFactory {
     @Override
     public PropertySource<?> createPropertySource(String name, EncodedResource resource) throws IOException {
         Properties propertiesFromYaml = loadYamlIntoProperties(resource);

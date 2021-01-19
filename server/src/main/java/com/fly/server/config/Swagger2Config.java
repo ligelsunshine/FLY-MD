@@ -1,6 +1,6 @@
 package com.fly.server.config;
 
-import com.fly.common.utils.YamlPropertySourceFactory;
+import com.fly.common.utils.YmlPropertySourceFactory;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -16,7 +16,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@PropertySource(value = {"classpath:./SwaggerConfiguration.yml"}, encoding = "UTF-8", factory = YamlPropertySourceFactory.class)
+@PropertySource(value = {"classpath:./SwaggerConfiguration.yml"}, encoding = "UTF-8", factory = YmlPropertySourceFactory.class)
 @ConfigurationProperties(prefix = "swagger")
 @Configuration
 @EnableSwagger2 //开启swagger

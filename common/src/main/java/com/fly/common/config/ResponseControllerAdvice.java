@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * author: LIBEL
  * version: 1.0
  */
-@RestControllerAdvice(basePackages = "com.adp.yqz.controller")// 这里是配置生效的接口路径
+@RestControllerAdvice(basePackages = "com.adp.yqz.**")// 这里是配置生效的接口路径
 public class ResponseControllerAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> aClass) {

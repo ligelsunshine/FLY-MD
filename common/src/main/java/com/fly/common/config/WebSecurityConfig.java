@@ -9,7 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * description: SecurityAthentic
+ * description: Security配置类
  * date: 2021/1/9 11:12
  * author: LIBEL
  * version: 1.0
