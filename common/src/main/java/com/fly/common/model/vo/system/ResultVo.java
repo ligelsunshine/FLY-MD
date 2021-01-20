@@ -1,4 +1,4 @@
-package com.fly.common.model.vo;
+package com.fly.common.model.vo.system;
 
 
 import com.fly.common.annotation.ExceptionCode;

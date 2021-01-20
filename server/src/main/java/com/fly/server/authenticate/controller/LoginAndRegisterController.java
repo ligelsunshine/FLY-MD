@@ -1,15 +1,15 @@
-package com.fly.server.Authenticate.controller;
-import com.fly.common.model.entity.UserEntity;
-import com.fly.common.model.param.LoginParam;
-import com.fly.common.model.param.RegisterParam;
-import com.fly.common.model.vo.UserVo;
+package com.fly.server.authenticate.controller;
+import com.fly.common.model.entity.authenticate.UserEntity;
+import com.fly.common.model.param.authenticate.LoginParam;
+import com.fly.common.model.param.authenticate.RegisterParam;
+import com.fly.common.model.vo.authenticate.UserVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import com.fly.server.Authenticate.service.UserService;
+import com.fly.server.authenticate.service.UserService;
 
 import javax.annotation.Resource;
 

@@ -1,4 +1,4 @@
-package com.fly.server.Authenticate.controller;
+package com.fly.server.authenticate.controller;
 
 import com.fly.common.annotation.NotResponseBody;
 import io.swagger.annotations.Api;

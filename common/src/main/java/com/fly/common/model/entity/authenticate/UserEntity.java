@@ -1,6 +1,7 @@
-package com.fly.common.model.entity;
+package com.fly.common.model.entity.authenticate;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fly.common.model.entity.system.BaseEntity;
 import lombok.Data;
 
 import java.io.Serializable;
