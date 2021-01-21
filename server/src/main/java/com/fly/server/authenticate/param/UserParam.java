@@ -1,4 +1,4 @@
-package com.fly.common.model.param;
+package com.fly.server.authenticate.param;
 
 
 import lombok.Data;

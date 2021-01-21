@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.fly.server.mapper.UserMapper">
-    <resultMap id="result" type="com.fly.common.model.entity.UserEntity">
+<mapper namespace="com.fly.server.authenticate.mapper.UserMapper">
+    <resultMap id="result" type="com.fly.server.authenticate.entity.UserEntity">
         <id column="id" jdbcType="VARCHAR" property="id"/>
         <result column="userName" property="userName" jdbcType="VARCHAR"/>
         <result column="password" property="passWord" jdbcType="VARCHAR"/>
     </resultMap>
-    <insert id="insert" parameterType="com.fly.common.model.entity.UserEntity">
+    <insert id="insert" parameterType="com.fly.server.authenticate.entity.UserEntity">
         INSERT INTO user (userName, passWord)
         VALUES(#{userEntity.userName},#{userEntity.passWord})
     </insert>
 
-    <select id="selectUserByName" resultType="com.fly.common.model.entity.UserEntity">
+    <select id="selectUserByName" resultType="com.fly.server.authenticate.entity.UserEntity">
         select * from user where username = #{userName}
     </select>
 </mapper>

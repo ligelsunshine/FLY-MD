@@ -1,4 +1,4 @@
-package com.fly.common.model.param;
+package com.fly.server.authenticate.param;
 
 import com.fly.common.annotation.ExceptionCode;
 import lombok.Data;

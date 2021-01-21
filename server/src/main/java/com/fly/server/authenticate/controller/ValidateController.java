@@ -1,9 +1,9 @@
-package com.fly.server.controller;
+package com.fly.server.authenticate.controller;
 
 
 import com.fly.common.annotation.NotResponseBody;
-import com.fly.common.model.entity.UserEntity;
-import com.fly.common.model.param.LoginParam;
+import com.fly.server.authenticate.entity.UserEntity;
+import com.fly.server.authenticate.param.LoginParam;
 import com.fly.common.model.vo.ResultVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

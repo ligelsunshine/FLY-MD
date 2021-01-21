@@ -15,9 +15,6 @@ import java.util.Map;
 public class ApplicationTests {
     @Test
     void contextLoads() {
-        Yaml yaml= new Yaml();
-        Map<String, Object> ret = (Map<String, Object>) yaml.load(this
-                .getClass().getClassLoader().getResourceAsStream("test.yaml"));
-        System.out.println(ret);
+
     }
 }

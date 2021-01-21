@@ -1,10 +1,10 @@
-package com.fly.server.service;
+package com.fly.server.authenticate.service;
 
 
-import com.fly.common.model.entity.UserEntity;
-import com.fly.common.model.param.LoginParam;
-import com.fly.common.model.param.UserParam;
-import com.fly.common.model.vo.UserVo;
+import com.fly.server.authenticate.entity.UserEntity;
+import com.fly.server.authenticate.param.LoginParam;
+import com.fly.server.authenticate.param.UserParam;
+import com.fly.server.authenticate.vo.UserVo;
 
 /**
  * description: UserService

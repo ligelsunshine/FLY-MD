@@ -1,4 +1,4 @@
-package com.fly.common.model.vo;
+package com.fly.server.authenticate.vo;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
