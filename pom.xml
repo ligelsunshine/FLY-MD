@@ -28,9 +28,9 @@
         <java.version>1.8</java.version>
         <spring-security-version>2.4.1</spring-security-version>
         <host-compile-version>2.2.5.RELEASE</host-compile-version>
-        <!--名字一定要是这样，不然报找不到实现类-->
+        <!--mapstruct版本-->
         <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
-        <!--Lombok-->
+        <!--Lombok版本-->
         <org.projectlombok.version>1.18.12</org.projectlombok.version>
     </properties>
     <!--依赖-->
