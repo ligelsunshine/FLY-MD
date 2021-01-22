@@ -4,7 +4,11 @@ server:
 spring:
   #数据源配置
   datasource:
+<<<<<<< HEAD
     url: jdbc:mysql://localhost:3306/Authenticate?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+=======
+    url: jdbc:mysql://localhost:3306/authenticate?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+>>>>>>> main
     username: root
     password: root
 # MyBatis-plus Configuration

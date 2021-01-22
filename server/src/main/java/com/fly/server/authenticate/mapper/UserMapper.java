@@ -1,7 +1,13 @@
+<<<<<<< HEAD:server/src/main/java/com/fly/server/authenticate/mapper/UserMapper.java
 
 package com.fly.server.authenticate.mapper;
 
 import com.fly.common.model.entity.authenticate.UserEntity;
+=======
+package com.fly.server.authenticate.mapper;
+
+import com.fly.server.authenticate.entity.UserEntity;
+>>>>>>> main:server/src/main/java/com/fly/server/mapper/UserMapper.java
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

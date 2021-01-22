@@ -2,9 +2,15 @@ package com.fly.server.authenticate.controller;
 
 
 import com.fly.common.annotation.NotResponseBody;
+<<<<<<< HEAD:server/src/main/java/com/fly/server/authenticate/controller/ValidateController.java
 import com.fly.common.model.entity.authenticate.UserEntity;
 import com.fly.common.model.param.authenticate.LoginParam;
 import com.fly.common.model.vo.system.ResultVo;
+=======
+import com.fly.server.authenticate.entity.UserEntity;
+import com.fly.server.authenticate.param.LoginParam;
+import com.fly.common.model.vo.ResultVo;
+>>>>>>> main:server/src/main/java/com/fly/server/controller/ValidateController.java
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.validation.annotation.Validated;

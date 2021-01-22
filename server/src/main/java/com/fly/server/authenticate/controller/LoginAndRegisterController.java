@@ -1,8 +1,15 @@
 package com.fly.server.authenticate.controller;
+<<<<<<< HEAD:server/src/main/java/com/fly/server/authenticate/controller/LoginAndRegisterController.java
 import com.fly.common.model.entity.authenticate.UserEntity;
 import com.fly.common.model.param.authenticate.LoginParam;
 import com.fly.common.model.param.authenticate.RegisterParam;
 import com.fly.common.model.vo.authenticate.UserVo;
+=======
+import com.fly.server.authenticate.entity.UserEntity;
+import com.fly.server.authenticate.param.LoginParam;
+import com.fly.server.authenticate.param.RegisterParam;
+import com.fly.server.authenticate.vo.UserVo;
+>>>>>>> main:server/src/main/java/com/fly/server/controller/LoginAndRegisterController.java
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.security.crypto.password.PasswordEncoder;
