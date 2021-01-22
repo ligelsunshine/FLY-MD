@@ -5,7 +5,7 @@ import com.fly.common.annotation.ExceptionCode;
 import com.fly.common.enums.ResultCode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
+import lombok.Data;
 
 /**
  * description: ResultVo
@@ -13,7 +13,7 @@ import lombok.Getter;
  * author: LIBEL
  * version: 1.0
  */
-@Getter
+@Data
 @ApiModel
 public class ResultVo<T> {
     @ApiModelProperty(value = "状态码", notes = "默认1000是成功")

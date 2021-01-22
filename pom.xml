@@ -28,7 +28,10 @@
         <java.version>1.8</java.version>
         <spring-security-version>2.4.1</spring-security-version>
         <host-compile-version>2.2.5.RELEASE</host-compile-version>
-        <mapstruct-version>1.4.1.Final</mapstruct-version>
+        <!--名字一定要是这样，不然报找不到实现类-->
+        <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
+        <!--Lombok-->
+        <org.projectlombok.version>1.18.12</org.projectlombok.version>
     </properties>
     <!--依赖-->
     <dependencies>
@@ -83,7 +86,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
+            <version>${org.projectlombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <!--解析yml文件工具-->
@@ -97,12 +100,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
             <scope>compile</scope>
-            <exclusions>
+            <!--<exclusions>
                 <exclusion>
                     <artifactId>tomcat-embed-el</artifactId>
                     <groupId>org.apache.tomcat.embed</groupId>
                 </exclusion>
-            </exclusions>
+            </exclusions>-->
         </dependency>
         <!--JWT，用于登录认证-->
         <dependency>
@@ -117,11 +120,16 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
+        <!--mapstruct-->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>${mapstruct-version}</version>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+            <version>1.4.1.Final</version>
         </dependency>
     </dependencies>
 
@@ -130,12 +138,27 @@
         <plugins>
             <!--打包-->
             <plugin>
+                <!--指定编译顺序-->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${org.projectlombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct</artifactId>
+                            <version>${org.mapstruct.version}</version>
+                        </path>
+
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>

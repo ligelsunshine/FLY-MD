@@ -3,12 +3,11 @@ package com.fly.server.dataBase.controller;
 
 import com.fly.common.model.vo.ResultVo;
 import com.fly.server.dataBase.entity.DataBaseMd;
-import com.fly.server.dataBase.infrastion.DataBaseMapStruct;
+import com.fly.server.dataBase.infrastructure.DataBaseMapStructMapper;
 import com.fly.server.dataBase.param.DataBaseMdParam;
 import com.fly.server.dataBase.service.DataBaseMdService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,11 +33,11 @@ public class DataBaseMdController {
     @ApiOperation(value = "插入数据库")
     @PostMapping("/save")
     public ResultVo<String> save(@RequestBody DataBaseMdParam dataBaseParam){
-        //DataBaseMd dataBase= DataBaseMapStruct.INSTANCE.DataBaseMdParamToDataBaseMd(dataBaseParam);
-        DataBaseMd dataBase= new DataBaseMd();
+        DataBaseMd dataBase= DataBaseMapStructMapper.INSTANCE.DataBaseMdParamToDataBaseMd(dataBaseParam);
+        /*DataBaseMd dataBase= new DataBaseMd();
         dataBase.setDescription(dataBaseParam.getDescription());
         dataBase.setType(dataBaseParam.getType());
-        dataBase.setVersion(dataBaseParam.getVersion());
+        dataBase.setVersion(dataBaseParam.getVersion());*/
         dataBaseMdService.save(dataBase);
         return new ResultVo<>("增加成功");
     }
