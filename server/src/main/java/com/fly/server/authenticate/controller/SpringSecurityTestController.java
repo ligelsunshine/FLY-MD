@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * description: SpringSecurityTestController
  * date: 2021/1/7 13:32
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @RequestMapping("/test")
 @Api(value = "Hello-World", tags = "系统运行测试接口")

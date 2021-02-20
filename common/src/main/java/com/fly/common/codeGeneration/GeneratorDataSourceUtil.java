@@ -40,13 +40,13 @@ public class GeneratorDataSourceUtil {
     **/
     public  DataSourceConfig getDataSourceConfig() {
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setDriverName(ymlConfig.getProperties("driver"));
-        dsc.setUrl(ymlConfig.getProperties("url"));
-        if(ObjectUtils.isNotEmpty(ymlConfig.getProperties("schemaName"))){
-            dsc.setSchemaName(ymlConfig.getProperties("schemaName"));
+        dsc.setDriverName(YmlConfig.getProperties("driver"));
+        dsc.setUrl(YmlConfig.getProperties("url"));
+        if(ObjectUtils.isNotEmpty(YmlConfig.getProperties("schemaName"))){
+            dsc.setSchemaName(YmlConfig.getProperties("schemaName"));
         }
-        dsc.setUsername(ymlConfig.getProperties("username"));
-        dsc.setPassword(ymlConfig.getProperties("password"));
+        dsc.setUsername(YmlConfig.getProperties("username"));
+        dsc.setPassword(YmlConfig.getProperties("password"));
         return dsc;
     }
     /**
@@ -57,8 +57,8 @@ public class GeneratorDataSourceUtil {
     public  PackageConfig getPackageConfig() {
         PackageConfig pc = new PackageConfig();
         // 生成PACKAGE_NAME.MODULE_NAME的包路径
-        pc.setParent(ymlConfig.getProperties("packageName"));
-        pc.setModuleName(ymlConfig.getProperties("moduleName"));
+        pc.setParent(YmlConfig.getProperties("packageName"));
+        pc.setModuleName(YmlConfig.getProperties("moduleName"));
         return pc;
     }
     /**
@@ -116,13 +116,13 @@ public class GeneratorDataSourceUtil {
         //生成 <code>@RestController</code> 控制器
         strategy.setRestControllerStyle(true);
         //需要包含的表名，允许正则表达式（与exclude二选一配置）
-        if(ObjectUtils.isNotEmpty(ymlConfig.getProperties("tableName"))){
-            strategy.setInclude(ymlConfig.getProperties("tableName").split(","));
+        if(ObjectUtils.isNotEmpty(YmlConfig.getProperties("tableName"))){
+            strategy.setInclude(YmlConfig.getProperties("tableName").split(","));
         }
         //驼峰转连字符
         strategy.setControllerMappingHyphenStyle(true);
         //要去掉表的前缀
-        strategy.setTablePrefix(ymlConfig.getProperties("tablePrefix"));
+        strategy.setTablePrefix(YmlConfig.getProperties("tablePrefix"));
         //是否生成实体时，生成字段注解
         strategy.setEntityTableFieldAnnotationEnable(true);
         return strategy;

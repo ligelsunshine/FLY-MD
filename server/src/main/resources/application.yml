@@ -1,16 +1,16 @@
 server:
-  port: 8081
-
+  port: 8082
 spring:
   #数据源配置
   datasource:
-<<<<<<< HEAD
-    url: jdbc:mysql://localhost:3306/Authenticate?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-=======
-    url: jdbc:mysql://localhost:3306/authenticate?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
->>>>>>> main
+    url: jdbc:mysql://localhost:3306/data-collect?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  # 排除自动配置内
+  #autoconfigure:
+    #exclude: org.springframework.boot.autoconfigure.aop.AopAutoConfiguration
+
+
 # MyBatis-plus Configuration
 mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml # 配置mapper xml文件的路径

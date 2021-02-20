@@ -6,8 +6,7 @@ import lombok.Getter;
  * description: 响应枚举
  * version: 1.0
  * date: 2021/1/14 21:56
- * author: LIBEL
- *
+ * @author LIGEL
  * @return
  */
 @Getter

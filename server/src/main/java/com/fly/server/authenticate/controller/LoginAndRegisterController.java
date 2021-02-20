@@ -1,15 +1,8 @@
 package com.fly.server.authenticate.controller;
-<<<<<<< HEAD:server/src/main/java/com/fly/server/authenticate/controller/LoginAndRegisterController.java
 import com.fly.common.model.entity.authenticate.UserEntity;
 import com.fly.common.model.param.authenticate.LoginParam;
 import com.fly.common.model.param.authenticate.RegisterParam;
 import com.fly.common.model.vo.authenticate.UserVo;
-=======
-import com.fly.server.authenticate.entity.UserEntity;
-import com.fly.server.authenticate.param.LoginParam;
-import com.fly.server.authenticate.param.RegisterParam;
-import com.fly.server.authenticate.vo.UserVo;
->>>>>>> main:server/src/main/java/com/fly/server/controller/LoginAndRegisterController.java
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,12 +16,12 @@ import javax.annotation.Resource;
 /**
  * description: LoginController
  * date: 2021/1/9 11:16
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Api(value = "spring-security测试", tags = "登录注册接口集合")
 @RestController
-@ResponseBody//如果不加这个会出现栈指针问题，这个解决方法也是在网上查找到的
+@ResponseBody
 @RequestMapping("/API")
 public class LoginAndRegisterController {
     @Resource

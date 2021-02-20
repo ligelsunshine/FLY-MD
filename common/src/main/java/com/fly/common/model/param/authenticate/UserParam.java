@@ -1,8 +1,4 @@
-<<<<<<< HEAD:common/src/main/java/com/fly/common/model/param/authenticate/UserParam.java
 package com.fly.common.model.param.authenticate;
-=======
-package com.fly.server.authenticate.param;
->>>>>>> main:server/src/main/java/com/fly/server/authenticate/param/UserParam.java
 
 
 import lombok.Data;
@@ -15,8 +11,8 @@ import java.util.List;
 /**
  * description: 這裡引入了验证依赖，spring-boot-starter-validation,适合用来进行简单的数据验证
  * date: 2021/1/11 22:24
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Data
 public class UserParam {

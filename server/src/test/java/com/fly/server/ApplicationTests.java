@@ -1,9 +1,9 @@
 package com.fly.server;
 
+import com.fly.server.learndemo.BeanDemo;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.yaml.snakeyaml.Yaml;
-import java.util.Map;
+
 
 /**
  * description: Test
@@ -15,6 +15,9 @@ import java.util.Map;
 public class ApplicationTests {
     @Test
     void contextLoads() {
+        BeanDemo beanDemo= new BeanDemo();
+        beanDemo.helloBean("ligel");
 
     }
+
 }

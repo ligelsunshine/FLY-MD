@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 /**
  * description: BaseEntity
  * date: 2021/1/12 15:39
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Data
 public class BaseEntity {

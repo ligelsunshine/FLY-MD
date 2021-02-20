@@ -1,17 +1,11 @@
 package com.fly.server.authenticate.service.impl;
 
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
-<<<<<<< HEAD:server/src/main/java/com/fly/server/authenticate/service/impl/UserServiceImpl.java
 import com.fly.common.model.entity.authenticate.UserEntity;
 import com.fly.common.model.param.authenticate.LoginParam;
 import com.fly.common.model.param.authenticate.UserParam;
 import com.fly.common.model.vo.authenticate.UserVo;
-=======
-import com.fly.server.authenticate.entity.UserEntity;
-import com.fly.server.authenticate.param.LoginParam;
-import com.fly.server.authenticate.param.UserParam;
-import com.fly.server.authenticate.vo.UserVo;
->>>>>>> main:server/src/main/java/com/fly/server/service/impl/UserServiceImpl.java
+
 import com.fly.common.security.JwtManager;
 import com.fly.server.authenticate.mapper.UserMapper;
 import com.fly.server.authenticate.service.UserService;
@@ -26,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * description: UserServiceImpl
  * date: 2021/1/11 22:13
- * author: LIBEL
+ * @author: LIBEL
  * version: 1.0
  */
 @Service

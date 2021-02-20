@@ -10,8 +10,8 @@ import lombok.Data;
 /**
  * description: ResultVo
  * date: 2021/1/14 21:50
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Data
 @ApiModel

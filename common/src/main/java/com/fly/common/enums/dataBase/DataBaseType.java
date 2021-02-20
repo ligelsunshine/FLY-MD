@@ -1,14 +1,12 @@
 package com.fly.common.enums.dataBase;
 
-import lombok.Data;
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * description: 数据库类型 编号1***开头是关系型数据库，编号2***开头是非关系型数据库
  * version: 1.0
  * date: 2021/1/20 21:44
- * author: LIBEL
+ * @author LIGEL
  * @return
  */
 @Getter

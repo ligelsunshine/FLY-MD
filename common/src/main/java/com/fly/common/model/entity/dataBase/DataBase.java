@@ -6,8 +6,8 @@ import lombok.Data;
 /**
  * description: DataBase
  * date: 2021/1/20 21:42
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Data
 public class DataBase {

@@ -16,10 +16,13 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * @author LIGEL
+ */
 @PropertySource(value = {"classpath:./SwaggerConfiguration.yml"}, encoding = "UTF-8", factory = YmlPropertySourceFactory.class)
 @ConfigurationProperties(prefix = "swagger")
 @Configuration
-@EnableSwagger2 //开启swagger
+@EnableSwagger2
 public class Swagger2Config {
     @Value("${swagger.enable}")
     private Boolean enable;
@@ -39,11 +42,12 @@ public class Swagger2Config {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .enable(enable)//开启配置
+                //开启配置
+                .enable(enable)
                 .apiInfo(apiInfo())
                 .select()
-                //生成api文档扫描
-                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)) //这里是一个坑，我用的路径扫描，应该用注解扫描
+                //生成api文档扫描,这里是一个坑，我用的路径扫描，应该用注解扫描
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
                 .build();
     }

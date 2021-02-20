@@ -1,8 +1,4 @@
-<<<<<<< HEAD:common/src/main/java/com/fly/common/model/param/authenticate/LoginParam.java
-package com.fly.common.model.param.authenticate;
-=======
 package com.fly.server.authenticate.param;
->>>>>>> main:server/src/main/java/com/fly/server/authenticate/param/LoginParam.java
 
 import com.fly.common.annotation.ExceptionCode;
 import lombok.Data;
@@ -13,8 +9,8 @@ import javax.validation.constraints.NotBlank;
 /**
  * description: LoginParam
  * date: 2021/1/11 22:35
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Data
 public class LoginParam {

@@ -1,14 +1,7 @@
-<<<<<<< HEAD:common/src/main/java/com/fly/common/model/entity/authenticate/UserEntity.java
-package com.fly.common.model.entity.authenticate;
-
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.fly.common.model.entity.system.BaseEntity;
-=======
 package com.fly.server.authenticate.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fly.common.model.entity.BaseEntity;
->>>>>>> main:server/src/main/java/com/fly/server/authenticate/entity/UserEntity.java
+import com.fly.common.model.entity.system.BaseEntity;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,8 +9,8 @@ import java.io.Serializable;
 /**
  * description: User
  * date: 2021/1/8 13:05
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Data
 @TableName("user")

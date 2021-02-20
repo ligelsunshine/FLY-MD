@@ -15,8 +15,8 @@ import java.util.Date;
 /**
  * description: JwtManager
  * date: 2021/1/12 15:46
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Slf4j
 @Component
@@ -40,10 +40,14 @@ public class JwtManager {
     public String generate(String userName) {
         Date expiryDate = new Date(System.currentTimeMillis() + expiration.toMillis());
         return Jwts.builder()
-                .setSubject(userName) // 将用户名放进JWT
-                .setIssuedAt(new Date()) // 设置JWT签发时间
-                .setExpiration(expiryDate)  // 设置过期时间
-                .signWith(SignatureAlgorithm.HS512, secretKey) // 设置加密算法和秘钥
+                // 将用户名放进JWT
+                .setSubject(userName)
+                // 设置JWT签发时间
+                .setIssuedAt(new Date())
+                // 设置过期时间
+                .setExpiration(expiryDate)
+                // 设置加密算法和秘钥
+                .signWith(SignatureAlgorithm.HS512, secretKey)
                 .compact();
     }
 

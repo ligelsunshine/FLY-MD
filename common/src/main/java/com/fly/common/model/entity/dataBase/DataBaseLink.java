@@ -6,8 +6,8 @@ import lombok.Data;
 /**
  * description: 数据库连接记录表
  * date: 2021/1/20 22:18
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @Data
 public class DataBaseLink extends BaseEntity {

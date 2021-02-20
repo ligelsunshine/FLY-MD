@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fly.common.annotation.NotResponseBody;
 import com.fly.common.model.vo.system.ResultVo;
-import com.fly.common.security.exception.APIException;
+import com.fly.common.security.exception.ApiException;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -38,7 +38,7 @@ public class ResponseControllerAdvice implements ResponseBodyAdvice<Object> {
                 // 将数据包装在ResultVO里后，再转换为json字符串响应给前端
                 return objectMapper.writeValueAsString(new ResultVo<>(o));
             } catch (JsonProcessingException e) {
-                throw new APIException("返回String类型错误");
+                throw new ApiException("返回String类型错误");
             }
         }
         // 将原本的数据包装在ResultVO里
