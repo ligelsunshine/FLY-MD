@@ -11,8 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * description: Security配置类
  * date: 2021/1/9 11:12
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

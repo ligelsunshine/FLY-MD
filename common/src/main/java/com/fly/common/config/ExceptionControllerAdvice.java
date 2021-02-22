@@ -14,8 +14,8 @@ import java.lang.reflect.Field;
 /**
  * description: 全局异常处理
  * date: 2021/1/14 21:28
- * author: LIBEL
  * version: 1.0
+ * @author LIGEL
  */
 @RestControllerAdvice
 public class ExceptionControllerAdvice {

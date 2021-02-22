@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author LIGEL
  */
 @SpringBootApplication
-@ComponentScan(value ={"com.fly.common.**","com.fly.server.**.**","com.fly.server.**"})
+@ComponentScan(value ={"com.fly.common.**","com.fly.server.**.**"})
 @MapperScan({"com.fly.server.**.mapper"})
 public class Application {
     public static void main(String[] args) {

@@ -9,8 +9,7 @@ import java.lang.annotation.Target;
  * description:  不加入全局响应注解
  * version: 1.0
  * date: 2021/1/15 21:33
- * author: LIBEL
- *
+ * @author LIGEL
  * @return
  */
 @Retention(RetentionPolicy.RUNTIME)

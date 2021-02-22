@@ -1,15 +1,17 @@
 package com.fly.server.authenticate.controller;
-import com.fly.common.model.entity.authenticate.UserEntity;
+
 import com.fly.common.model.param.authenticate.LoginParam;
 import com.fly.common.model.param.authenticate.RegisterParam;
 import com.fly.common.model.vo.authenticate.UserVo;
+import com.fly.server.authenticate.entity.UserEntity;
+import com.fly.server.authenticate.service.UserService;
+import com.fly.server.learndemo.aopdemo.AopAnnotation;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import com.fly.server.authenticate.service.UserService;
 
 import javax.annotation.Resource;
 
@@ -34,11 +36,11 @@ public class LoginAndRegisterController {
      * version: 1.0
      * date: 2021/1/12 16:33
      * author: LIBEL
-     *
      * @param param
      * @return com.adp.FTXSecurity.model.vo.UserVo
      */
     @ApiOperation(value = "登录")
+    @AopAnnotation(name = "loginAop", value = "userTable")
     @PostMapping("/login")
     public UserVo login(@RequestBody @Validated LoginParam param, BindingResult bindingResult) {
         return userService.login(param);
@@ -54,6 +56,7 @@ public class LoginAndRegisterController {
      * @param param
      * @return java.lang.String
      */
+
     @ApiOperation(value = "注册")
     @PostMapping("/register")
     public String register(@RequestBody RegisterParam param) {

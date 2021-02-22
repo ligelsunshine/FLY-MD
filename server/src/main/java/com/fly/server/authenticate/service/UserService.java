@@ -1,10 +1,10 @@
 package com.fly.server.authenticate.service;
 
 
-import com.fly.common.model.entity.authenticate.UserEntity;
 import com.fly.common.model.param.authenticate.LoginParam;
 import com.fly.common.model.param.authenticate.UserParam;
 import com.fly.common.model.vo.authenticate.UserVo;
+import com.fly.server.authenticate.entity.UserEntity;
 
 
 /**
@@ -13,7 +13,6 @@ import com.fly.common.model.vo.authenticate.UserVo;
  * version: 1.0
  * @author LIGEL
  */
-
 public interface UserService {
     /**
      * description: 用户登录
@@ -46,5 +45,6 @@ public interface UserService {
      * @param param
      * @return void
      */
+
     void createUser(UserEntity param);
 }
