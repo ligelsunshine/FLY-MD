@@ -3,7 +3,7 @@ package com.fly.common.config;
 
 import com.fly.common.annotation.ExceptionCode;
 import com.fly.common.enums.ResultCode;
-import com.fly.common.model.vo.system.ResultVo;
+import com.fly.common.model.vo.ResultVo;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

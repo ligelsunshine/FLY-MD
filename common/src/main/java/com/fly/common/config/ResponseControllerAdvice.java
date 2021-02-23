@@ -4,7 +4,7 @@ package com.fly.common.config;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fly.common.annotation.NotResponseBody;
-import com.fly.common.model.vo.system.ResultVo;
+import com.fly.common.model.vo.ResultVo;
 import com.fly.common.security.exception.ApiException;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
