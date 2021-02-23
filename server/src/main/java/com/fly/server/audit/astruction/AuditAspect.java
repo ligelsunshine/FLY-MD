@@ -1,5 +1,7 @@
 package com.fly.server.audit.astruction;
 
+import com.fly.server.audit.enums.DataStatusEnum;
+import com.fly.common.utils.IdGen;
 import com.fly.server.audit.entity.AuditRecordAudit;
 import com.fly.server.audit.service.AuditRecordAuditService;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -9,7 +11,6 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -27,6 +28,8 @@ import java.time.LocalDateTime;
 public class AuditAspect {
     @Resource
     private AuditRecordAuditService auditRecordAuditService;
+
+    final IdGen idGen = IdGen.get();
     /**
      * description: 通过环绕增强，在需要加入审核的方法中增加审核流程
      * version: 1.0
@@ -53,13 +56,14 @@ public class AuditAspect {
             Object obj= Class.forName(parameters[0].getParameterizedType().getTypeName()).newInstance();
             System.out.println("反射类路径："+parameters[0].getParameterizedType().getTypeName());
             obj= args[0];
-            long tag= 12312313L;
+            // 通过id生成算法生成唯一Tag
+            long tag= idGen.nextId();
             Field auditTag = aClass.getDeclaredField("auditTag");
             Field dataStatus = aClass.getDeclaredField("dataStatus");
             auditTag.setAccessible(true);
             auditTag.set(obj, tag);
             dataStatus.setAccessible(true);
-            dataStatus.set(obj , 0);
+            dataStatus.set(obj , DataStatusEnum.WAIT_AUDIT.getCode());
             // 回调赋值，不对，这里拿到的是副本，不是函数的实际参数值,下面注释的也可以实现，可以自己赋值参数，这样可以插入多个，应该用于批量插入
             /*Object[] obs = new Object[1];
             obs[0]=obj;
@@ -68,7 +72,7 @@ public class AuditAspect {
             Object proceed = proceedingJoinPoint.proceed();
             AuditRecordAudit auditRecordAudit = new AuditRecordAudit();
             // 插入审核记录
-            int i=1/0;
+            // int i=1/0;
             auditRecordAudit.setAuditTag(tag);
             auditRecordAudit.setIsAuditUser(0);
             auditRecordAudit.setAppointAuditUser("131313");

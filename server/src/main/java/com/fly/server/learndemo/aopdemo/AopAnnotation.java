@@ -15,7 +15,7 @@ import java.lang.annotation.*;
  *  METHOD: 方法上
  * version: 1.0
  * date: 2021/2/21 19:27
- * author: LIBEL
+ * @author LIGEL
  */
 @Target(ElementType.METHOD)
 /**
@@ -27,6 +27,7 @@ import java.lang.annotation.*;
  * 这是默认行为，所有没有用Retention注解的注解，都会采用这种策略。
  * RUNTIME
  * 保留至运行时。所以我们可以通过反射去获取注解信息。
+ * @author LIGEL
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

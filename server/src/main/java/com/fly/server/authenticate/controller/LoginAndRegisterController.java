@@ -1,10 +1,11 @@
 package com.fly.server.authenticate.controller;
 
-import com.fly.common.model.param.authenticate.LoginParam;
-import com.fly.common.model.param.authenticate.RegisterParam;
-import com.fly.common.model.vo.authenticate.UserVo;
+
 import com.fly.server.authenticate.entity.UserEntity;
+import com.fly.server.authenticate.param.LoginParam;
+import com.fly.server.authenticate.param.RegisterParam;
 import com.fly.server.authenticate.service.UserService;
+import com.fly.server.authenticate.vo.UserVo;
 import com.fly.server.learndemo.aopdemo.AopAnnotation;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

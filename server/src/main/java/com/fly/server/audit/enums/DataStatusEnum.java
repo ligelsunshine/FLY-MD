@@ -1,4 +1,4 @@
-package com.fly.common.enums.audit;
+package com.fly.server.audit.enums;
 
 import lombok.Getter;
 
