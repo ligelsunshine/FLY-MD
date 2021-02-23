@@ -1,4 +1,4 @@
-package com.fly.server.learndemo;
+package com.fly.server.learndemo.iocdemo;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,7 +15,7 @@ import org.springframework.core.io.Resource;
 public class BeanDemo {
     MyTestBean myTestBean;
     public BeanDemo() {
-        Resource resource= new ClassPathResource("MyTestBean.xml");
+        Resource resource= new ClassPathResource("Application.xml");
         ApplicationContext ctx= new ClassPathXmlApplicationContext(resource.getFilename());
         myTestBean= (MyTestBean)ctx.getBean("myTestBean");
     }
