@@ -62,6 +62,7 @@ public class ValidateController {
         user.setId(242424242L);
         user.setUserName("admin");
         user.setPassWord("admin123");
+        //int i= 1/0;
         return user;
     }
 }

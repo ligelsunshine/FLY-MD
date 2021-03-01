@@ -20,6 +20,14 @@ import java.util.concurrent.TimeUnit;
  */
 @SpringBootTest
 public class ApplicationTests {
+    /*
+     * description:  关于Id生成算法测试 生成一百四十万个
+     * version: 1.0
+     * date: 2021/2/26 12:51
+     * @author: LIGEL
+     * @param null
+     * @return
+     */
     @Test
     void IdGeneratorTest() {
         long avg = 0;
@@ -50,5 +58,6 @@ public class ApplicationTests {
         System.out.println("平均完成时间需要: " + avg / 10 / 1.0e3 + "秒");
 
     }
+
 
 }

@@ -10,7 +10,8 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
@@ -44,22 +45,22 @@ public class AuditAspect {
      * 问题：
      * 1. 这里加的事务是不起作用的，拦截的方法执行后抛出异常，该方法的执行结果没办法回滚
      * 2. 这里使用声明式事务，不能实现代理函数一起回滚，使用编程式事务能够实现。对于集体情况，还需要探究为什么声明式事务失效
-     * 3. 隐藏问题是，auditTag可能会重复，单都是要百万级后才会产生。
+     * 3. 隐藏问题是，auditTag可能会重复，但都是要几百万级后才会产生。
+     * 4. 隐藏bug,这里的参数可以有多个，但是操作的数据必须放在第一个
      * @return java.lang.Object
      */
     @Around("@annotation(com.fly.server.audit.astruction.AuditTagAnnotation)")
+    @Transactional(rollbackFor = ArithmeticException.class, propagation = Propagation.REQUIRED)
     public void aroundMethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        TransactionStatus begin= null;
         Object[] args =proceedingJoinPoint.getArgs();
         MethodSignature methodSignature= (MethodSignature) proceedingJoinPoint.getSignature();
         Method method = methodSignature.getMethod();
+        // 注解
         AuditTagAnnotation action= method.getAnnotation(AuditTagAnnotation.class);
+        // 参数
         Parameter[] parameters = method.getParameters();
-        System.out.println("该方法执行之前：注解式拦截.第一个参数:"+parameters[0].toString());
-        System.out.println("自定义注解参数："+action.tableName());
         Class<?> aClass = Class.forName(parameters[0].getParameterizedType().getTypeName());
-        Object obj= Class.forName(parameters[0].getParameterizedType().getTypeName()).newInstance();
-        System.out.println("反射类路径："+parameters[0].getParameterizedType().getTypeName());
+        Object obj= aClass.newInstance();
         obj= args[0];
         // 通过id生成算法生成唯一Tag
         long tag= idGen.nextId();
@@ -81,18 +82,24 @@ public class AuditAspect {
         auditRecordAudit.setAppointAuditUser("131313");
         auditRecordAudit.setGmtCreate(LocalDateTime.now());
         auditRecordAudit.setTableName(action.tableName());
-        auditRecordAudit.setReasonForApplicat("就是想提交审核了！");
+        auditRecordAudit.setReasonForApplication("就是想提交审核了！");
+        auditRecordAudit.setOperatorType(action.operatorType().getCode());
+        Object proceed = proceedingJoinPoint.proceed();
+        auditRecordAuditService.save(auditRecordAudit);
+        // int i= 1/0;
+        // 事务
+        /*TransactionStatus begin= null;
         try {
             begin= manager.begin();
             Object proceed = proceedingJoinPoint.proceed();
             auditRecordAuditService.save(auditRecordAudit);
             //int i= 1/0;
             manager.commit(begin);
-        }catch (Exception e){
+        }catch (Exception e) {
             e.printStackTrace();
             manager.rollback(begin);
         }finally {
 
-        }
+        }*/
     }
 }

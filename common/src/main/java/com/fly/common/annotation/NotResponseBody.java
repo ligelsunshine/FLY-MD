@@ -13,6 +13,6 @@ import java.lang.annotation.Target;
  * @return
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD}) /*只能放在方法上*/
+@Target({ElementType.METHOD})
 public @interface NotResponseBody {
 }

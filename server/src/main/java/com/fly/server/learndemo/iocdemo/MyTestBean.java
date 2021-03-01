@@ -1,4 +1,4 @@
-package com.fly.server.learndemo;
+package com.fly.server.learndemo.iocdemo;
 
 import lombok.Data;
 

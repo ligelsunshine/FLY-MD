@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
- * description: ResponseControllerAdvice
+ * description: ResponseControllerAdvices
  * date: 2021/1/15 21:28
  * version: 1.0
  * @author LIGEL
  */
-@RestControllerAdvice(basePackages = "com.adp.yqz.**")
+@RestControllerAdvice(basePackages = {"com.fly.server.authenticate.controller"})
 public class ResponseControllerAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> aClass) {

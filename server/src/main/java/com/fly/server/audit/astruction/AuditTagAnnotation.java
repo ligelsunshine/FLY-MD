@@ -1,5 +1,7 @@
 package com.fly.server.audit.astruction;
 
+import com.fly.server.audit.enums.OperatorTypeEnum;
+
 import java.lang.annotation.*;
 
 /**
@@ -14,5 +16,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface AuditTagAnnotation {
     // 操作的表名称
-    String tableName();
+    String tableName() default "";
+    OperatorTypeEnum operatorType();
 }

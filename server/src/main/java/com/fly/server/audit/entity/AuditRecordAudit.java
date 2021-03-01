@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author fly
- * @since 2021-02-22
+ * @since 2021-02-24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -56,12 +56,6 @@ public class AuditRecordAudit implements Serializable {
     private String tableName;
 
     /**
-     * 数据编号
-     */
-    @TableField("data_index")
-    private Long dataIndex;
-
-    /**
      * 指定用户审核开关
      */
     @TableField("is_audit_user")
@@ -82,8 +76,14 @@ public class AuditRecordAudit implements Serializable {
     /**
      * 审核申请理由
      */
-    @TableField("reason_for_applicat")
-    private String reasonForApplicat;
+    @TableField("reason_for_application")
+    private String reasonForApplication;
+
+    /**
+     * 操作类型（ADD=0，UPDATE=1，DELETE=2，QUERY=3）
+     */
+    @TableField("operator_type")
+    private Integer operatorType;
 
 
 }

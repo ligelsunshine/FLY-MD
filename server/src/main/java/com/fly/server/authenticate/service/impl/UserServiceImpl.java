@@ -3,6 +3,7 @@ package com.fly.server.authenticate.service.impl;
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
 import com.fly.common.security.JwtManager;
 import com.fly.server.audit.astruction.AuditTagAnnotation;
+import com.fly.server.audit.enums.OperatorTypeEnum;
 import com.fly.server.authenticate.entity.UserEntity;
 import com.fly.server.authenticate.mapper.UserMapper;
 import com.fly.server.authenticate.param.LoginParam;
@@ -68,7 +69,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    @AuditTagAnnotation(tableName = "user")
+    @AuditTagAnnotation(tableName = "user", operatorType = OperatorTypeEnum.ADD)
     public void createUser(UserEntity param) {
         userMapper.insert(param);
     }

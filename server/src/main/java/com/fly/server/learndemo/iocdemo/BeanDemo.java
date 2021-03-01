@@ -15,7 +15,7 @@ import org.springframework.core.io.Resource;
 public class BeanDemo {
     MyTestBean myTestBean;
     public BeanDemo() {
-        Resource resource= new ClassPathResource("Application.xml");
+        Resource resource= new ClassPathResource("ApplicatioConfigationn.xml");
         ApplicationContext ctx= new ClassPathXmlApplicationContext(resource.getFilename());
         myTestBean= (MyTestBean)ctx.getBean("myTestBean");
     }
