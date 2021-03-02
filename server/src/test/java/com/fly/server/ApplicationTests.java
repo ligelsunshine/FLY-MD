@@ -2,7 +2,9 @@ package com.fly.server;
 
 import com.fly.common.utils.IdGen;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,8 @@ import java.util.concurrent.TimeUnit;
  */
 @SpringBootTest
 public class ApplicationTests {
+    @Autowired
+    StringRedisTemplate stringRedisTemplate;
     /*
      * description:  关于Id生成算法测试 生成一百四十万个
      * version: 1.0
@@ -57,6 +61,11 @@ public class ApplicationTests {
         }
         System.out.println("平均完成时间需要: " + avg / 10 / 1.0e3 + "秒");
 
+    }
+
+    @Test
+    void redisTest(){
+        stringRedisTemplate.opsForValue().set("aaa", "111");
     }
 
 
