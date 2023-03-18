@@ -19,8 +19,9 @@ import java.lang.reflect.Field;
  */
 @RestControllerAdvice
 public class ExceptionControllerAdvice {
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResultVo<String> MethodArgumentNotValidExceptionHandler(MethodArgumentNotValidException exception) throws NoSuchFieldException {
+        @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResultVo<String> MethodArgumentNotValidExceptionHandler(MethodArgumentNotValidException exception)
+            throws NoSuchFieldException {
         // 为什么最后是零呢？---这里用List<ObjectError>集合来存储错误信息,默认显示第一个错误，其他的不现实
         String defaultMessage = exception.getBindingResult().getAllErrors().get(0).getDefaultMessage();
         // 查看错误字段
